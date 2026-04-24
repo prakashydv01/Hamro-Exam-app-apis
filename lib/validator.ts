@@ -63,7 +63,7 @@ export const validate = <T>(
 
   if (!result.success) {
     const error: any = new Error(
-      result.error.errors[0].message
+      result.error.issues[0].message
     );
     error.statusCode = 400;
     throw error;

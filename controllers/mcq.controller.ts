@@ -4,6 +4,22 @@ import MockTest from "@/models/MockTest";
 
 export const MCQController = {
   /* =========================
+     GET FACULTIES (✅ FIX ADDED)
+  ========================= */
+  async getFaculties() {
+    // Get distinct faculties from questions collection
+    const faculties = await Question.distinct("faculty");
+
+    return faculties;
+  },
+  async getSubjects(p0: string) {
+    // Get distinct faculties from questions collection
+    const subjects = await Question.distinct("subject");
+
+    return subjects;
+  },
+
+  /* =========================
      PRACTICE QUESTIONS
   ========================= */
   async getPracticeQuestions(query: any) {
